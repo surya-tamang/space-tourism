@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.home_section {
+    background: url('/src/assets/home/background-home-desktop.jpg')
+}
+
+.navs::after {
+    content: "";
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    scale: 0;
+    transition: all 0.3s ease;
+}
+
+.navs:hover::after,
+.navs_active::after {
+    scale: 1;
+}
