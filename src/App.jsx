@@ -2,8 +2,13 @@ import React from "react";
 import Header from "./components/Header";
 
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+
 import Home from "./pages/Home";
-import './index.css'
+import Destination from "./pages/Destination";
+import Crew from "./pages/Crew";
+import Technology from "./pages/Technology";
+
+import "./index.css";
 
 function App() {
   return (
@@ -12,6 +17,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/space-tourism/" element={<Home />} />
+          <Route path="/space-tourism/destination" element={<Destination />} />
+          <Route path="/space-tourism/crew" element={<Crew />} />
+          <Route path="/space-tourism/technology" element={<Technology />} />
         </Routes>
       </BrowserRouter>
     </>

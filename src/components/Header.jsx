@@ -1,42 +1,35 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import NavBar from "./NavBar";
 
 const Header = () => {
-  const navList = [
-    { title: "Home", path: "/space-tourism/" },
-    { title: "Destination", path: "/space-tourism/destination" },
-    { title: "Crew", path: "/space-tourism/crew" },
-    { title: "Technology", path: "/space-tourism/technology" },
-  ];
+  const [display, setDisplay] = useState("flex");
+  const [icon, setIcon] = useState("icon-hamburger.svg");
+
+  const handleHamburger = () => {
+    if (icon === "icon-hamburger.svg" && display === "hidden") {
+      setIcon("icon-close.svg");
+      setDisplay("flex");
+    } else {
+      setIcon("icon-hamburger.svg");
+      setDisplay("hidden");
+    }
+  };
 
   return (
-    <div className="absolute flex w-full top-10 justify-between px-12">
+    <div className="header absolute flex w-full top-10 justify-between px-12 items-center">
       <div className="logo">
         <img src="logo.svg" alt="logo" />
       </div>
 
-      <nav className="flex gap-10 backdrop-blur-lg items-center px-12">
-        {navList.map((item, index) => {
-          const { title, path } = item;
-          return (
-            <NavLink
-              key={index}
-              to={path}
-              className={({ isActive }) =>
-                `navs flex gap-2 uppercase text-slate-50 relative py-5 ${
-                  isActive ? "navs_active" : ""
-                }`
-              }
-            >
-              <span>0{index}</span>
-              <p>{title}</p>
-            </NavLink>
-          );
-        })}
-      </nav>
-      <div className="sm:hidden"> 
-        <img src="icon-hamburger.svg" alt="icon-hamburger" />
-        <img src="icon-close.svg" alt="icon-close" />
+      <NavBar visible={display} />
+
+      <div className="hamburger">
+        <img
+          src={icon}
+          alt="icon-hamburger"
+          id="open"
+          onClick={handleHamburger}
+        />
       </div>
     </div>
   );
