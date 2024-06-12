@@ -29,7 +29,15 @@
     background: url('/src/assets/technology/background-technology-desktop.jpg');
 }
 
-.navs::after {
+.navs:hover::after,
+.dest_button:hover:after,
+.navs_active::after,
+.dest_active::after {
+    scale: 1;
+}
+
+.navs::after,
+.dest_button::after {
     content: "";
     background-color: white;
     height: 3px;
@@ -38,11 +46,7 @@
     bottom: 0;
     scale: 0;
     transition: all 0.3s ease;
-}
-
-.navs:hover::after,
-.navs_active::after {
-    scale: 1;
+    left: 0;
 }
 
 .hamburger {

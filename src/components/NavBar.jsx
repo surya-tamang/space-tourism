@@ -2,19 +2,10 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
-export default function NavBar({ visible }) {
-  const navList = [
-    { title: "Home", path: "/space-tourism/" },
-    { title: "Destination", path: "/space-tourism/destination" },
-    { title: "Crew", path: "/space-tourism/crew" },
-    { title: "Technology", path: "/space-tourism/technology" },
-  ];
-
+export default function NavBar({ list }) {
   return (
-    <nav
-      className={`navBar flex gap-10 backdrop-blur-lg items-center px-14 ${visible}`}
-    >
-      {navList.map((item, index) => {
+    <>
+      {list.map((item, index) => {
         const { title, path } = item;
         return (
           <NavLink
@@ -32,6 +23,6 @@ export default function NavBar({ visible }) {
           </NavLink>
         );
       })}
-    </nav>
+    </>
   );
 }
