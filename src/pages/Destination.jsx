@@ -5,6 +5,7 @@ import Europa from "../assets/destination/image-europa.png";
 import Mars from "../assets/destination/image-mars.png";
 
 import dataJson from "../data.json";
+import Heading from "../components/Heading";
 
 const Destination = () => {
   const destinationList = dataJson.destinations;
@@ -37,28 +38,23 @@ const Destination = () => {
     (item) => item.dest_name === destination
   );
 
-  console.log("selectedDestination:", selectedDestination);
-
   return (
     <div className="destination_page px-24 min-h-screen w-full text-slate-50 flex items-start justify-center flex-col gap-12 pt-36 pb-11">
-      <div className="mt-8">
-        <h1 className="ml-12 text-2xl font-thin">
-          <span className="font-bold text-slate-400">01</span> Pick Your
-          destination
-        </h1>
-      </div>
-      <div className="flex items-center gap-28 mt-12 w-full">
-        <div className="w-6/12">
+      <Heading title={"Pick your destination"} index={"01"} />
+      <div className="destination_content flex items-center gap-28 mt-6 w-full">
+        <div className="imgBox w-6/12">
           <img src={image} alt="destination" />
         </div>
-        <div className="w-6/12">
+        <div className="desBox w-6/12">
           <div className="flex gap-4">
             {destinationList.map((item, index) => {
               const { dest_name } = item;
               return (
                 <button
-                  className={`dest_button uppercase relative py-1 px-2 ${
-                    destination === dest_name ? "dest_active" : ""
+                  className={`dest_button uppercase relative p-2 ${
+                    selectedDestination.dest_name === dest_name
+                      ? "dest_active"
+                      : ""
                   }`}
                   key={index}
                   onClick={() => handleClick(dest_name)}

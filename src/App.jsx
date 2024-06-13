@@ -9,6 +9,7 @@ import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
 
 import "./index.css";
+import "./app.css";
 
 function App() {
   return (

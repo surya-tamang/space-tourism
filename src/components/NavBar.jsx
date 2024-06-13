@@ -13,7 +13,7 @@ export default function NavBar({ list }) {
             to={path}
             end={path === "/space-tourism/"}
             className={({ isActive }) =>
-              `navs flex gap-2 uppercase text-slate-50 relative py-5 ${
+              `navs flex gap-2 uppercase text-slate-50 relative py-5 px-3 ${
                 isActive ? "navs_active" : ""
               }`
             }

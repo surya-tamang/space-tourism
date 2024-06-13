@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavBar from "./NavBar";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const navList = [
@@ -8,26 +9,28 @@ const Header = () => {
     { title: "Crew", path: "/space-tourism/crew" },
     { title: "Technology", path: "/space-tourism/technology" },
   ];
-  const [display, setDisplay] = useState("flex");
+  const [isShown, setIsShown] = useState(false);
   const [icon, setIcon] = useState("icon-hamburger.svg");
 
   const handleHamburger = () => {
-    if (icon === "icon-hamburger.svg" && display === "hidden") {
+    if (icon === "icon-hamburger.svg") {
       setIcon("icon-close.svg");
-      setDisplay("flex");
+      setIsShown(true);
     } else {
       setIcon("icon-hamburger.svg");
-      setDisplay("hidden");
+      setIsShown(false);
     }
   };
 
   return (
     <div className="header absolute flex w-full top-10 justify-between px-12 items-center">
-      <div className="logo">
+      <NavLink className="logo" to={"/space-tourism/"}>
         <img src="logo.svg" alt="logo" />
-      </div>
+      </NavLink>
       <nav
-        className={`navBar flex gap-10 backdrop-blur-lg items-center px-14 ${display}`}
+        className={`navBar flex gap-6 backdrop-blur-lg items-center px-14 ${
+          isShown ? "showNavBar" : ""
+        }`}
       >
         <NavBar list={navList} />
       </nav>
