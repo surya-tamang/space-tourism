@@ -6,6 +6,16 @@
 
 /*---------------home page styling---------------*/
 
+
+.home_page,
+.crew_page,
+.destination_page,
+.technology_page {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .home_page {
     background: url('/src/assets/home/background-home-desktop.jpg')
 }
@@ -15,7 +25,13 @@
 
 .crew_page {
     background: url('/src/assets/crew/background-crew-desktop.jpg');
+
 }
+
+.frame {
+    width: 35rem;
+}
+
 
 /*---------------destination page styling---------------*/
 
@@ -32,9 +48,19 @@
 
 .navs:hover::after,
 .dest_button:hover:after,
-.navs_active::after,
-.dest_active::after {
+.navs_active::after {
     scale: 1;
+}
+
+.dest_active::after {
+    content: "";
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    scale: 1.5;
+    left: 0;
 }
 
 .navs::after,
@@ -91,6 +117,16 @@ h1.space {
 
     .destination_content {
         flex-direction: column;
+        margin-top: 0;
+        gap: 10px;
+    }
+
+    .heading_div {
+        margin: 0;
+    }
+
+    .heading {
+        font-size: 20px;
     }
 
     .imgBox img {
@@ -99,7 +135,7 @@ h1.space {
 
     .imgBox,
     .desBox {
-        width: 80%;
+        width: 90%;
     }
 
     .technology_page {
@@ -117,8 +153,7 @@ h1.space {
     }
 
     .navs {
-        font-size: 13px;
-        margin: 0 5px;
+        font-size: 10px;
     }
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 
 import "../index.css";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -14,9 +15,9 @@ const Home = () => {
           back, and relax because we'll give you safety
         </p>
       </article>
-      <button className="h-52 w-52 bg-slate-50 rounded-full uppercase">
+      <NavLink className="h-52 w-52 bg-slate-50 rounded-full uppercase flex items-center justify-center font-bold text-2xl tracking-wider" to={'/space-tourism/destination'}>
         explore
-      </button>
+      </NavLink>
     </div>
   );
 };

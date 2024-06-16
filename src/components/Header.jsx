@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <div className="header absolute flex w-full top-10 justify-between px-12 items-center">
+    <div className="header absolute flex w-full top-10 justify-between px-12 items-center z-10">
       <NavLink className="logo" to={"/space-tourism/"}>
         <img src="logo.svg" alt="logo" />
       </NavLink>

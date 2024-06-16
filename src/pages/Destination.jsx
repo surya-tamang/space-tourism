@@ -46,16 +46,17 @@ const Destination = () => {
           <img src={image} alt="destination" />
         </div>
         <div className="desBox w-6/12">
-          <div className="flex gap-4">
+          <div className="flex gap-4 h-20 items-center">
             {destinationList.map((item, index) => {
               const { dest_name } = item;
               return (
                 <button
-                  className={`dest_button uppercase relative p-2 ${
+                  className={`${
                     selectedDestination.dest_name === dest_name
-                      ? "dest_active"
+                      ? "text-3xl"
                       : ""
-                  }`}
+                  } 
+                  dest_button uppercase relative p-2 `}
                   key={index}
                   onClick={() => handleClick(dest_name)}
                 >
@@ -64,14 +65,14 @@ const Destination = () => {
               );
             })}
           </div>
-          <div>
-            <h1 className="text-9xl uppercase my-6">
+          <div className="h-72">
+            <h1 className="text-9xl uppercase my-1">
               {selectedDestination.dest_name}
             </h1>
             <p>{selectedDestination.description}</p>
           </div>
-          <hr className="bg-slate-400 my-8 opacity-40" />
-          <div className="flex gap-44">
+          <hr className="bg-slate-400 opacity-40" />
+          <div className="flex gap-44 mt-5">
             <div>
               <h1 className="font-thin text-1xl uppercase">Avg. distance</h1>
               <p className="text-3xl font-extralight uppercase">
