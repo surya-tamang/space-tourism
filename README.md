@@ -15,11 +15,6 @@ Users should be able to:
 - Solution URL: https://github.com/surya-tamang/space-tourism
 - Live Site URL: https://surya-tamang.github.io/space-tourism/
 
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
 ## Author
 
 - Website - (https://www.surya-tamang.com.np)
