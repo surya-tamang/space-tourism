@@ -39,7 +39,7 @@ const Destination = () => {
   );
 
   return (
-    <div className="destination_page px-24 min-h-screen w-full text-slate-50 flex items-start justify-center flex-col gap-12 pt-36 pb-11">
+    <div className="destination_page pl-24 min-h-screen w-full text-slate-50 flex items-start justify-center flex-col gap-12 pt-36 pb-11">
       <Heading title={"Pick your destination"} index={"01"} />
       <div className="destination_content flex items-center gap-28 mt-6 w-full">
         <div className="imgBox w-6/12">
@@ -65,14 +65,14 @@ const Destination = () => {
               );
             })}
           </div>
-          <div className="h-72">
-            <h1 className="text-9xl uppercase my-1">
+          <div className="h-72 destInfo">
+            <h1 className="text-9xl uppercase my-1 destName">
               {selectedDestination.dest_name}
             </h1>
             <p>{selectedDestination.description}</p>
           </div>
           <hr className="bg-slate-400 opacity-40" />
-          <div className="flex gap-44 mt-5">
+          <div className="flex gap-44 mt-5 travel">
             <div>
               <h1 className="font-thin text-1xl uppercase">Avg. distance</h1>
               <p className="text-3xl font-extralight uppercase">

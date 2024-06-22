@@ -16,10 +16,18 @@ const Header = () => {
     if (icon === "icon-hamburger.svg") {
       setIcon("icon-close.svg");
       setIsShown(true);
+      document.body.classList.add("no-scroll");
     } else {
       setIcon("icon-hamburger.svg");
       setIsShown(false);
+      document.body.classList.remove("no-scroll");
     }
+  };
+
+  const handleNavLinkClick = () => {
+    setIcon("icon-hamburger.svg");
+    setIsShown(false);
+    document.body.classList.remove("no-scroll"); // Enable scrolling
   };
 
   return (
@@ -32,7 +40,7 @@ const Header = () => {
           isShown ? "showNavBar" : ""
         }`}
       >
-        <NavBar list={navList} />
+        <NavBar list={navList} handle={handleNavLinkClick} />
       </nav>
       <div className="hamburger">
         <img
