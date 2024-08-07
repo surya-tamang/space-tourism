@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Moon from "../assets/destination/image-moon.png";
-import Titan from "../assets/destination/image-titan.png";
-import Europa from "../assets/destination/image-europa.png";
-import Mars from "../assets/destination/image-mars.png";
+import Moon from "/destination/image-moon.png";
+import Titan from "/destination/image-titan.png";
+import Europa from "/destination/image-europa.png";
+import Mars from "/destination/image-mars.png";
 
 import dataJson from "../data.json";
 import Heading from "../components/Heading";
